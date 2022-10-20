@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Spring Music Upload</title>
+</head>
+<body>
+
+<p><a th:href="@{/create}">Create new song</a></p>
+
+<table>
+  <thead>
+  <tr>
+    <td>ID</td>
+    <td>Singer</td>
+    <td>Category</td>
+    <td>Song</td>
+    <td>Listen</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="song : ${songs}">
+    <td th:text="${song.id}"></td>
+    <td th:text="${song.singer}"></td>
+    <td th:text="${song.category}"></td>
+    <td th:text="${song.song}"></td>
+    <td><a th:href="@{/{id}/listen(id=${song.id})}">Listen</a></td>
+  </tr>
+  </tbody>
+</table>
+
+
+</body>
+</html>

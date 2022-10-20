@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listen</title>
+</head>
+<body>
+<a th:href="@{/song}" th:text="Back"></a>
+Listen
+<p th:text="${song}"></p>
+
+<audio controls th:src="@{'/song/' + ${song.song}}"></audio>
+
+</body>
+</html>
